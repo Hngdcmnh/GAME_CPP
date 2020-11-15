@@ -12,7 +12,7 @@ void bullet::Init()
 {
 	body.setScale(0.5f, 0.5f);
 	sf::Texture c0;
-	c0.loadFromFile("b2_10.png");
+	c0.loadFromFile("./texture/weapon/b2_10.png");
 	animation d0(c0, 1, 0.1);
 	anim[0] = d0;
 }
@@ -36,7 +36,7 @@ void bullet::Fire(sf::Vector2f hero_pos,bool face_right)
 	anim[0].SetTextureForSprite(body);
 }
 
-void bullet::Update(/*sf::Vector2f hero_pos, bool fire, bool change, bool face_right*/)
+void bullet::Update()
 {
 	if (right)
 	{
@@ -49,7 +49,7 @@ void bullet::Update(/*sf::Vector2f hero_pos, bool fire, bool change, bool face_r
 
 void bullet::Draw(sf::RenderWindow& window)
 {
-	if(this->is_collide==0) window.draw(body);
+	if (is_collide==0 ) window.draw(body);
 	//window.draw(body);
 }
 
@@ -58,7 +58,3 @@ sf::Sprite bullet::GetBullet()
 	return this->body;
 }
 
-sf::Sprite bullet::GetBody()
-{
-	return body;
-}

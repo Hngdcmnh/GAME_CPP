@@ -13,12 +13,12 @@ protected:
 public:
 	bullet();
 	void Init();
-	void Collide();
+	void Collide(); // Handle collision when bullet collide with enemy
+					// Just make the bullet disappear
 	bool Is_Collide();
-	void Fire(sf::Vector2f hero_pos,bool face_right);
-	void Update(/*sf::Vector2f hero_pos, bool fire, bool change, bool face_right*/);
+	void Fire(sf::Vector2f hero_pos,bool face_right); //Print bullet at location and direction of hero
+	void Update();
 	void Draw(sf::RenderWindow& window);
-	sf::Sprite GetBullet();
-	sf::Sprite GetBody();
+	sf::Sprite GetBullet(); // get sprite body
 };
 
